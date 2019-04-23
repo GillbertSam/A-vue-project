@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+            "url": "/static/img/fapiao.png",
+            "href": "/content1",
+            "desc": "content1"
+        },
+        {
+            "url": "/static/img/kehu.png",
+            "href": "/content2",
+            "desc": "content2"
+        },
+        {
+            "url": "/static/img/ruzhu.png",
+            "href": "/content3",
+            "desc": "content3"
+        },
+        {
+            "url": "/static/img/xiangqing.png",
+            "href": "/content4",
+            "desc": "content4"
+        },
+        {
+            "url": "/static/img/yejipaiming.png",
+            "href": "/content5",
+            "desc": "content5"
+        },
+        {
+            "url": "/static/img/zhinan.png",
+            "href": "/content6",
+            "desc": "content6"
+        }
+    ]
+}
