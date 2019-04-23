@@ -6,11 +6,11 @@
         <img :src="img.url" alt>
       </mt-swipe-item>
     </mt-swipe>-->
-      <el-carousel :interval="1000" type="card" height="200px">
-        <el-carousel-item v-for="(img,index) in imgs" v-bind:key="index">
-          <img :src="img.url" alt>
-        </el-carousel-item>
-      </el-carousel>
+    <el-carousel :interval="1000" type="card" height="200px">
+      <el-carousel-item v-for="(img,index) in imgs" v-bind:key="index">
+        <img :src="img.url" alt>
+      </el-carousel-item>
+    </el-carousel>
     <div class="home-content">
       <ul>
         <li v-for="(item,index) in contents" :key="index">
@@ -37,24 +37,28 @@ export default {
   watch: {},
   methods: {},
   created () {
-    this.$axios
-      .get('/static/jsons/lunbotu.json')
-      .then(res => {
-        console.log(res)
-        this.imgs = res.data.data
-      })
-      .catch(err => {
-        console.log('轮播图异常', err)
-      })
-    this.$axios
-      .get('/static/jsons/home_content.json')
-      .then(res => {
-        console.log(res)
-        this.contents = res.data.data
-      })
-      .catch(err => {
-        console.log('内容区异常', err)
-      })
+    let imgs = require('../../../static/jsons/lunbotu.json')
+    this.imgs = imgs.data
+    let contents = require('../../../static/jsons/home_content.json')
+    this.contents = contents.data
+    // this.$axios
+    //   .get('/static/jsons/lunbotu.json')
+    //   .then(res => {
+    //     console.log(res)
+    //     this.imgs = res.data.data
+    //   })
+    //   .catch(err => {
+    //     console.log('轮播图异常', err)
+    //   })
+    // this.$axios
+    //   .get('/static/jsons/home_content.json')
+    //   .then(res => {
+    //     console.log(res)
+    //     this.contents = res.data.data
+    //   })
+    //   .catch(err => {
+    //     console.log('内容区异常', err)
+    //   })
   },
   mounted () {},
   beforeCreate () {},
@@ -101,6 +105,6 @@ export default {
   margin: 5px auto 10px;
 }
 .home .el-carousel__container {
-  background-color: rgba(124,255,0, .2);
+  background-color: rgba(124, 255, 0, 0.2);
 }
 </style>
