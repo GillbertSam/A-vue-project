@@ -1,16 +1,16 @@
 <!--  -->
 <template>
   <div class="home">
-    <!-- <mt-swipe :auto="4000">
+    <mt-swipe :auto="4000">
       <mt-swipe-item v-for="(img,index) in imgs" v-bind:key="index">
         <img :src="img.url" alt>
       </mt-swipe-item>
-    </mt-swipe>-->
-    <el-carousel :interval="1000" type="card" height="200px">
+    </mt-swipe>
+    <!-- <el-carousel :interval="1000" type="card" height="200px">
       <el-carousel-item v-for="(img,index) in imgs" v-bind:key="index">
         <img :src="img.url" alt>
       </el-carousel-item>
-    </el-carousel>
+    </el-carousel> -->
     <div class="home-content">
       <ul>
         <li v-for="(item,index) in contents" :key="index">
