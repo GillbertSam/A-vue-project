@@ -9,9 +9,12 @@ import 'mint-ui/lib/style.css'
 import './assets/css/global.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import navBar from './components/navBar.vue'
 
 Vue.use(MintUI)
 Vue.use(ElementUI)
+
+Vue.component(navBar.name, navBar)
 // axios.defaults.baseURL = 'http://www.sinya.online/api/'
 Vue.prototype.$axios = axios
 

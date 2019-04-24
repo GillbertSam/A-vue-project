@@ -1,22 +1,26 @@
 <template>
   <div id="app">
-    <mt-header title="外卖"></mt-header>
-    <router-view></router-view>
+    <mt-header fixed title="外卖"></mt-header>
+    <div class="main">
+      <transition name="fade">
+        <router-view></router-view>
+      </transition>
+    </div>
     <mt-tabbar v-model="selected">
   <mt-tab-item id="home">
-    <img slot="icon" src="./assets/images/coo.png">
+    <img @click="goTab" slot="icon" src="./assets/images/coo.png">
     首页
   </mt-tab-item>
   <mt-tab-item id="member">
-    <img slot="icon" src="./assets/images/hsm.png">
+    <img @click="goTab" slot="icon" src="./assets/images/hsm.png">
     会员
   </mt-tab-item>
   <mt-tab-item id="shopcart">
-    <img slot="icon" src="./assets/images/shc.png">
+    <img @click="goTab" slot="icon" src="./assets/images/shc.png">
     购物车
   </mt-tab-item>
   <mt-tab-item id="search">
-    <img slot="icon" src="./assets/images/cloudauth.png">
+    <img @click="goTab" slot="icon" src="./assets/images/cloudauth.png">
     发现
   </mt-tab-item>
 </mt-tabbar>
@@ -32,7 +36,13 @@ export default {
     }
   },
   methods: {
-
+    goTab () {
+      // this.$nextTick(function () {
+      //   this.$router.push({
+      //     name: this.selected
+      //   })
+      // })
+    }
   },
   watch: {
     selected (newV, oldV) {
@@ -44,6 +54,17 @@ export default {
   }
 }
 </script>
-
 <style>
+.main {
+  margin: 40px 0 55px;
+}
+.mint-tabbar {
+  position: fixed;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>

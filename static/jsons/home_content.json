@@ -2,33 +2,39 @@
     "data": [
         {
             "url": "./static/img/fapiao.png",
-            "href": "#/content1",
-            "desc": "content1"
+            "href": "News/NewsList",
+            "desc": "NewsList",
+            "name":"News.NewsList"
         },
         {
             "url": "./static/img/kehu.png",
-            "href": "#/content2",
-            "desc": "content2"
+            "href": "content2",
+            "desc": "content2",
+            "name":"News.NewsList"
         },
         {
             "url": "./static/img/ruzhu.png",
-            "href": "#/content3",
-            "desc": "content3"
+            "href": "content3",
+            "desc": "content3",
+            "name":"News.NewsList"
         },
         {
             "url": "./static/img/xiangqing.png",
-            "href": "#/content4",
-            "desc": "content4"
+            "href": "content4",
+            "desc": "content4",
+            "name":"News.NewsList"
         },
         {
             "url": "./static/img/yejipaiming.png",
-            "href": "#/content5",
-            "desc": "content5"
+            "href": "content5",
+            "desc": "content5",
+            "name":"News.NewsList"
         },
         {
             "url": "./static/img/zhinan.png",
-            "href": "#/content6",
-            "desc": "content6"
+            "href": "content6",
+            "desc": "content6",
+            "name":"News.NewsList"
         }
     ]
 }

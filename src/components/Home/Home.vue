@@ -14,10 +14,10 @@
     <div class="home-content">
       <ul>
         <li v-for="(item,index) in contents" :key="index">
-          <a :href="item.href">
+          <router-link :to="{name:item.name}">
             <b :style="`background-image:url(${item.url})`"></b>
             <span>{{item.desc}}</span>
-          </a>
+          </router-link>
         </li>
       </ul>
     </div>
@@ -37,28 +37,33 @@ export default {
   watch: {},
   methods: {},
   created () {
+    // 使用引入资源 解决build后不能使用axios请求静态json的问题
     let imgs = require('../../../static/jsons/lunbotu.json')
     this.imgs = imgs.data
     let contents = require('../../../static/jsons/home_content.json')
     this.contents = contents.data
-    // this.$axios
-    //   .get('/static/jsons/lunbotu.json')
-    //   .then(res => {
-    //     console.log(res)
-    //     this.imgs = res.data.data
-    //   })
-    //   .catch(err => {
-    //     console.log('轮播图异常', err)
-    //   })
-    // this.$axios
-    //   .get('/static/jsons/home_content.json')
-    //   .then(res => {
-    //     console.log(res)
-    //     this.contents = res.data.data
-    //   })
-    //   .catch(err => {
-    //     console.log('内容区异常', err)
-    //   })
+    /*
+    *正常接口应该使用axios
+    *
+    this.$axios
+      .get('/static/jsons/lunbotu.json')
+      .then(res => {
+        console.log(res)
+        this.imgs = res.data.data
+      })
+      .catch(err => {
+        console.log('轮播图异常', err)
+      })
+    this.$axios
+      .get('/static/jsons/home_content.json')
+      .then(res => {
+        console.log(res)
+        this.contents = res.data.data
+      })
+      .catch(err => {
+        console.log('内容区异常', err)
+      })
+    */
   },
   mounted () {},
   beforeCreate () {},
@@ -74,9 +79,12 @@ export default {
 .mint-swipe {
   height: 200px;
 }
+.mint-swipe img {
+  width: 100%;
+  height: auto;
+}
 .home-content ul li {
   float: left;
-  list-style: none;
   width: 33.3%;
   box-sizing: border-box;
   height: 100px;
