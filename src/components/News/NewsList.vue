@@ -4,7 +4,7 @@
     <nav-bar :title="title"></nav-bar>
     <ul class="list">
       <li v-for="(list,index) in datas" :key="index">
-        <router-link :to="{name:'News.NewsDetail',query:{id:1}}">
+        <router-link :to="{name:'News.NewsDetail',query:{id:index}}">
           <div class="list-content-left">{{list.title}}</div>
           <div class="list-content-right">{{list.content}}</div>
         </router-link>

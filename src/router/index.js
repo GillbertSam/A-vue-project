@@ -18,22 +18,34 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: {
+        showTabBar: true
+      }
     },
     {
       path: '/member',
       name: 'member',
-      component: Member
+      component: Member,
+      meta: {
+        showTabBar: true
+      }
     },
     {
       path: '/search',
       name: 'search',
-      component: Search
+      component: Search,
+      meta: {
+        showTabBar: true
+      }
     },
     {
       path: '/shopcart',
       name: 'shopcart',
-      component: Shopcart
+      component: Shopcart,
+      meta: {
+        showTabBar: true
+      }
     },
     {
       path: '/News/NewsList',

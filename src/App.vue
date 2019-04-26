@@ -2,11 +2,11 @@
   <div id="app">
     <mt-header fixed title="外卖"></mt-header>
     <div class="main">
-      <transition name="fade">
+      <!-- <transition name="fade"> -->
         <router-view></router-view>
-      </transition>
+      <!-- </transition> -->
     </div>
-    <mt-tabbar v-model="selected">
+    <mt-tabbar v-if="$route.meta.showTabBar" v-model="selected">
   <mt-tab-item id="home">
     <img @click="goTab" slot="icon" src="./assets/images/coo.png">
     首页
@@ -32,24 +32,29 @@ export default {
   name: 'App',
   data () {
     return {
-      selected: ''
+      selected: '',
+      isSelected: true
     }
   },
   methods: {
     goTab () {
-      // this.$nextTick(function () {
-      //   this.$router.push({
-      //     name: this.selected
-      //   })
-      // })
+      this.isSelected = true
     }
   },
   watch: {
-    selected (newV, oldV) {
-      console.log(newV, oldV)
+    // selected (newV, oldV) {
+    //   console.log(newV, oldV)
+    //   this.$router.push({
+    //     name: newV
+    //   })
+    // }
+  },
+  updated () {
+    if (this.isSelected) {
       this.$router.push({
-        name: newV
+        name: this.selected
       })
+      this.isSelected = false
     }
   }
 }
