@@ -8,19 +8,23 @@
     </div>
     <mt-tabbar v-if="$route.meta.showTabBar" v-model="selected">
   <mt-tab-item id="home">
-    <img @click="goTab" slot="icon" src="./assets/images/coo.png">
+    <!-- <img @click="goTab" slot="icon" src="./assets/images/coo.png"> -->
+    <img :to="{name:'/home'}" slot="icon" src="./assets/images/coo.png">
     首页
   </mt-tab-item>
   <mt-tab-item id="member">
-    <img @click="goTab" slot="icon" src="./assets/images/hsm.png">
+    <!-- <img @click="goTab" slot="icon" src="./assets/images/hsm.png"> -->
+    <img :to="{name:'/member'}" slot="icon" src="./assets/images/hsm.png">
     会员
   </mt-tab-item>
   <mt-tab-item id="shopcart">
-    <img @click="goTab" slot="icon" src="./assets/images/shc.png">
+    <!-- <img @click="goTab" slot="icon" src="./assets/images/shc.png"> -->
+    <img :to="{name:'/shopcart'}" slot="icon" src="./assets/images/shc.png">
     购物车
   </mt-tab-item>
   <mt-tab-item id="search">
-    <img @click="goTab" slot="icon" src="./assets/images/cloudauth.png">
+    <!-- <img@click="goTab" slot="icon" src="./assets/images/cloudauth.png"> -->
+    <img :to="{name:'/search'}" slot="icon" src="./assets/images/cloudauth.png">
     发现
   </mt-tab-item>
 </mt-tabbar>

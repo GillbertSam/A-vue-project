@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div class>
-    <p id="test_3">
+    <!-- <p id="test_3">
       <img
         src="../../assets/logo.png"
         @mousedown="start"
@@ -9,7 +9,7 @@
         @mousemove="move"
         :style="style"
       >
-    </p>
+    </p> -->
   </div>
 </template>
 
